@@ -1,75 +1,80 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>fx-82 (clon)</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Casio fx-82MS Clon</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <div class="calc">
-    <div class="display">
-      <div id="modeLine">DEG | M:0</div>
-      <div id="mainLine">0</div>
+  <div class="calculator">
+    <div class="branding">
+      <span class="brand">CASIO</span>
+      <span class="model">fx-82MS</span>
+      <span class="sub">S-V.P.A.M.</span>
+    </div>
+
+    <div class="screen">
+      <div id="inputLine">0</div>
+      <div id="outputLine"></div>
     </div>
 
     <div class="keys">
-      <!-- fila modo/memoria -->
-      <button data-action="toggleDegRad" class="key small blue">DEG/RAD</button>
-      <button data-action="ans" class="key small">Ans</button>
-      <button data-action="mc" class="key small">MC</button>
-      <button data-action="mr" class="key small">MR</button>
-      <button data-action="mplus" class="key small">M+</button>
-      <button data-action="mminus" class="key small">M−</button>
+      <!-- fila 1 -->
+      <button class="key shift">SHIFT</button>
+      <button class="key alpha">ALPHA</button>
+      <button class="key small">MODE</button>
+      <button class="key small">CLR</button>
+      <button class="key small">ON</button>
 
-      <!-- funciones -->
-      <button data-insert="(" class="key">(</button>
-      <button data-insert=")" class="key">)</button>
-      <button data-fn="percent" class="key">%</button>
-      <button data-fn="factorial" class="key">x!</button>
-      <button data-fn="inv" class="key">1/x</button>
-      <button data-fn="square" class="key">x²</button>
+      <!-- fila 2 -->
+      <button class="key">x²</button>
+      <button class="key">√</button>
+      <button class="key">log</button>
+      <button class="key">ln</button>
+      <button class="key">sin</button>
+      <button class="key">cos</button>
+      <button class="key">tan</button>
 
-      <button data-fn="sqrt" class="key">√</button>
-      <button data-fn="pow" class="key">xʸ</button>
-      <button data-fn="sin" class="key">sin</button>
-      <button data-fn="cos" class="key">cos</button>
-      <button data-fn="tan" class="key">tan</button>
-      <button data-fn="ln" class="key">ln</button>
+      <!-- fila 3 -->
+      <button class="key">(</button>
+      <button class="key">)</button>
+      <button class="key">x!</button>
+      <button class="key">nCr</button>
+      <button class="key">nPr</button>
+      <button class="key op">÷</button>
 
-      <button data-fn="log" class="key">log</button>
-      <button data-insert="π" class="key">π</button>
-      <button data-insert="e" class="key">e</button>
-      <button data-action="del" class="key orange">DEL</button>
-      <button data-action="ac" class="key orange wide">AC</button>
-      <button data-action="divide" class="key op">÷</button>
+      <!-- fila 4 -->
+      <button class="key">7</button>
+      <button class="key">8</button>
+      <button class="key">9</button>
+      <button class="key op">×</button>
+      <button class="key del">DEL</button>
+      <button class="key ac">AC</button>
 
-      <!-- números y ops -->
-      <button data-insert="7" class="key">7</button>
-      <button data-insert="8" class="key">8</button>
-      <button data-insert="9" class="key">9</button>
-      <button data-action="multiply" class="key op">×</button>
+      <!-- fila 5 -->
+      <button class="key">4</button>
+      <button class="key">5</button>
+      <button class="key">6</button>
+      <button class="key op">−</button>
+      <button class="key">ENG</button>
+      <button class="key">DRG</button>
 
-      <button data-insert="4" class="key">4</button>
-      <button data-insert="5" class="key">5</button>
-      <button data-insert="6" class="key">6</button>
-      <button data-action="minus" class="key op">−</button>
+      <!-- fila 6 -->
+      <button class="key">1</button>
+      <button class="key">2</button>
+      <button class="key">3</button>
+      <button class="key op">+</button>
+      <button class="key">%</button>
+      <button class="key ans">Ans</button>
 
-      <button data-insert="1" class="key">1</button>
-      <button data-insert="2" class="key">2</button>
-      <button data-insert="3" class="key">3</button>
-      <button data-action="plus" class="key op">+</button>
-
-      <button data-insert="0" class="key wide">0</button>
-      <button data-insert="." class="key">.</button>
-      <button data-action="powCaret" class="key">^</button>
-      <button data-action="equals" class="key equals">=</button>
+      <!-- fila 7 -->
+      <button class="key zero">0</button>
+      <button class="key">.</button>
+      <button class="key">EXP</button>
+      <button class="key equal">=</button>
     </div>
   </div>
-
-  <footer class="note">
-    Hecho con ❤️ para parecerse a una fx-82 (no oficial).
-  </footer>
 
   <script src="app.js"></script>
 </body>
