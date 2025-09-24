@@ -1,67 +1,24 @@
-body{
-  margin:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-  background:#111;
-  font-family:Arial,Helvetica,sans-serif;
-}
+const inputLine = document.getElementById("inputLine");
+const outputLine = document.getElementById("outputLine");
+let expr = "";
 
-.calculator{
-  background:#2a2a2a;
-  border-radius:20px;
-  padding:20px 15px;
-  width:320px;
-  box-shadow:0 6px 20px rgba(0,0,0,.7);
-}
+function update(){ inputLine.textContent = expr || "0"; }
 
-.branding{
-  text-align:center;
-  margin-bottom:6px;
-}
-.brand{ font-size:1.2rem; font-weight:bold; color:#fff; margin-right:8px; }
-.model{ font-size:.9rem; color:#ccc; }
-.sub{ display:block; font-size:.8rem; color:#bbb; }
+document.querySelectorAll(".key").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    const val = btn.textContent.trim();
 
-.screen{
-  background:#cdd9c2;
-  border:2px inset #444;
-  border-radius:6px;
-  padding:8px;
-  margin:12px 0;
-  font-family:'Courier New',monospace;
-  color:#000;
-}
-#inputLine{ font-size:1rem; min-height:1.2em; }
-#outputLine{ font-size:1.3rem; font-weight:bold; min-height:1.4em; text-align:right; }
+    if(val==="="){
+      try{
+        let res = eval(expr.replace(/×/g,"*").replace(/÷/g,"/"));
+        outputLine.textContent = res;
+      }catch{ outputLine.textContent="Error"; }
+    }
+    else if(val==="AC"){ expr=""; outputLine.textContent=""; }
+    else if(val==="DEL"){ expr=expr.slice(0,-1); }
+    else{ expr+=val; }
+    update();
+  });
+});
 
-.keys{
-  display:grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap:8px;
-}
-
-.key{
-  background:#444;
-  border:none;
-  border-radius:6px;
-  padding:12px 8px;
-  font-size:.95rem;
-  color:#fff;
-  text-align:center;
-  box-shadow:0 2px 0 #222;
-  cursor:pointer;
-  transition:transform .05s;
-}
-.key:active{ transform:translateY(2px); }
-
-.key.op{ background:#555; }
-.key.equal{ background:#0a662e; font-weight:bold; grid-column:span 2; }
-.key.ac{ background:#a83232; }
-.key.del{ background:#e0701c; }
-.key.shift{ background:#ffcc00; color:#000; }
-.key.alpha{ background:#c22; }
-.key.ans{ background:#0a662e; }
-.key.zero{ grid-column:span 2; }
-.key.small{ font-size:.8rem; padding:10px; }
+update();
