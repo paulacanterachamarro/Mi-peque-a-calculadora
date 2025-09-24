@@ -1,0 +1,92 @@
+:root{
+  --bg:#0f1115;
+  --bezel:#181b22;
+  --screen:#0b0e13;
+  --lcd:#d7f9d0;
+  --text:#e7e7ea;
+  --key:#242733;
+  --key-top:#2e3242;
+  --key-op:#39415a;
+  --key-eq:#2b6f3e;
+  --key-orange:#7a3d1b;
+  --accent:#6fa8ff;
+  --blue:#6fa8ff;
+  --shadow:0 8px 24px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(180deg,#0b0e13 0%, #0f1115 100%);
+  color:var(--text);
+  font-family:Inter,system-ui,Arial,Helvetica,sans-serif;
+}
+
+.calc{
+  width:min(380px,92vw);
+  background:var(--bezel);
+  border-radius:22px;
+  padding:16px 16px 20px;
+  box-shadow:var(--shadow);
+  border:1px solid #262a36;
+}
+
+.display{
+  background:var(--screen);
+  border-radius:14px;
+  padding:14px 12px;
+  box-shadow:inset 0 0 0 1px #232631, inset 0 8px 24px rgba(0,0,0,.35);
+  margin-bottom:14px;
+}
+
+#modeLine{
+  font-size:.78rem;
+  color:#a7b3c9;
+  letter-spacing:.04em;
+  height:1.2rem;
+}
+#mainLine{
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  color:var(--lcd);
+  font-weight:600;
+  font-size:1.85rem;
+  text-shadow:0 0 1px rgba(0,0,0,.2);
+  min-height:2.2rem;
+  overflow-wrap:anywhere;
+}
+
+.keys{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:10px;
+}
+
+.key{
+  border:none;
+  border-radius:12px;
+  padding:12px 10px;
+  font-size:1rem;
+  background:linear-gradient(180deg,var(--key-top),var(--key));
+  color:var(--text);
+  box-shadow:0 2px 0 #00000066, inset 0 1px 0 rgba(255,255,255,.04);
+  cursor:pointer;
+  user-select:none;
+  transition:transform .02s ease-in, filter .2s ease, box-shadow .2s ease;
+}
+.key:active{ transform: translateY(1px); }
+.key.op{ background: linear-gradient(180deg, var(--key-op), #2b3247); }
+.key.equals{ background: linear-gradient(180deg, var(--key-eq), #245f36); font-weight:700; }
+.key.orange{ background: linear-gradient(180deg, #a04e22, var(--key-orange)); }
+.key.blue{ background: linear-gradient(180deg, #3b6ea8, #2a4f79); color:#e8f1ff; }
+.key.small{ font-size:.9rem; padding:10px 8px; }
+.key.wide{ grid-column: span 2; }
+
+.note{
+  margin-top:12px;
+  font-size:.75rem;
+  color:#8d93a3;
+  opacity:.9;
+}
